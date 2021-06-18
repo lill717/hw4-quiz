@@ -11,8 +11,10 @@ var submitBtn = document.getElementById("submit");
 var score = 0;
 var index = 0;
 
+startBtn.addEventListener("click", startQuiz);
 
-function startQuiz(start) {
+function startQuiz() {
+    console.log("salkdfj")
     timerEl.textContent = time;
     var firstPage = document.getElementById("header");
     firstPage.setAttribute("class", "start hide");
@@ -21,10 +23,10 @@ function startQuiz(start) {
     timerId = setInterval(function () {
         time();   //initial start time
     }, 1000);
-        timerEl.textContent = time;
+    timerEl.textContent = time;
 
-        getQ();
-    }
+    getQ();
+}
 //         secondsLeft--;
 //         if (secLeft === 0) {
 //             clearInterval(timer);
@@ -43,22 +45,81 @@ function getQ() {
     index++;
 }
 
+const questions = [
+
+    {
+        title: "Which animal listed here has a pouch?",
+        options: ["a) Sugar Glider", "b) Flying squirrels"],
+        answer: "Sugar Glider"
+    }
+
+]
+
+
+
+
 for (var i = 0; i < currentQ.options.length; i++) {
     var choice = document.createElement("submit")
 
 
+   
+       
 
 
-function quizEnd() {
-            clearInterval(timerId);
-            timerEl.textContent = time;
 
-            var lastScreenEl = 
-    } 
+
+
 }
 
 
-function timer() {
+
+
+
+
+
+
+    function buildQuiz() {
+        const output = [];
+
+        questions.forEach(
+            (currentQ, index) => {
+                const options = [];
+                for (letter in currentQ.options) {
+                    options.push(
+                        `<label>
+                        < input type = "button" name = "questions(index.letter)" ></input >
+                        currentQ.options(letter)
+                        </label > `
+                    )
+                }
+            }
+        )
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function quizEnd() {
+        clearInterval(timerId);
+        timerEl.textContent = time;
+
+        // var lastScreenEl = 
+
+
+
+
+        function timer() {
             time--;
             timerEl.textContent = time;
             if (time <= 0)
@@ -69,7 +130,7 @@ function timer() {
 
 
 
-function displayQuestions() {
+        function displayQuestions() {
             console.log(questions[index].question)
             quiz.textContent = questions[index].question;
             for (var i = 0; i < questions[index].answers.length; i++) {
@@ -81,4 +142,5 @@ function displayQuestions() {
                 timer();
             }
         }
-}
+    }
+
