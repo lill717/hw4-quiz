@@ -12,25 +12,30 @@
 
 <body>
     <h3>Timer: <span class="timer"></span></h3>
-    <h3 class="highScore">High Score</h3>
+    <h3 class="highScore">View High Score</h3>
 
     <header>
         <!-- Headers for the quiz-->
-        <h1 class="quiz">Fun Animal Facts Quiz</h1>
+        <h1 class="t">Fun Animal Facts Quiz</h1>
         <h2 class="rules">Rules to the quiz:</h2>
             <p>Here are some questions regarding fun animal facts. You have 60 seconds to take the quiz. Please select the answer you think is the correct one to the question.</p>
         <button class="start">Start Quiz</button>
     </header>
     
-
     <!-- Pages of questions -->
-    <div id="container">
+    <div id="title">
         <h1 class="questions"></h1>
         <div class="answers"></div>
     </div>
 
-    <button></button>
-
+    <div class="lastScreen"></div>
+        <h2>You Are All Done!</h2>
+        <h3>Your final score is: <span id="finalScore"></span></h3>
+        <p>
+            Enter your initials: <input type="text" id="initials" />
+            <button class="submit">Submit</button>
+        </p>
+    </div>
     <!-- Added link to the jQuery library -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="./assets/js/js.js"></script>

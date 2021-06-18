@@ -4,8 +4,8 @@
 
 //question (loop)  unit 5 lesson 5
 
-var time = 5;
-var index = 0;
+// var time = 5;
+// var index = 0;
 
 var questions = [
     {
