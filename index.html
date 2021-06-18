@@ -11,26 +11,29 @@
 </head>
 
 <body>
+    <h3>Timer: <span class="timer"></span></h3>
+    <h3 class="highScore">High Score</h3>
+
     <header>
-        <!-- Header for the quiz-->
-        <div class="high score">High Score</div>
-        <div class="timer">Timer</div>
+        <!-- Headers for the quiz-->
         <h1 class="quiz">Fun Animal Facts Quiz</h1>
-        <h2 class="rules">Rules to the quiz</h2>
+        <h2 class="rules">Rules to the quiz:</h2>
             <p>Here are some questions regarding fun animal facts. You have 60 seconds to take the quiz. Please select the answer you think is the correct one to the question.</p>
-    </header>
-
-    <div id="container">
         <button class="start">Start Quiz</button>
-        <h1 class="questoins"></h1>
+    </header>
+    
+
+    <!-- Pages of questions -->
+    <div id="container">
+        <h1 class="questions"></h1>
         <div class="answers"></div>
-
     </div>
+
+    <button></button>
+
+    <!-- Added link to the jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./assets/js/js.js"></script>
 </body>
-
-
-<script>
-    src = "./assets/js/javascript.js"
-</script>
 
 </html>
