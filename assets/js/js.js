@@ -1,75 +1,84 @@
+var Qindex = 0
 var time = 3;
-var timer = 0;
-var secLeft;
-var timerId;
+var timer;
+var secLeft = 60;
+var isQuizOver = false;
 
-var questions = document.getElementById("questions");
-var answers = document.getElementById("answers");
 var startBtn = document.getElementById("start");
-var submitBtn = document.getElementById("submit");
+var submitBtn = document.getElementById("#submit");
 
-var score = 0;
-var index = 0;
 
-startBtn.addEventListener("click", startQuiz);
 
-function startQuiz() {
-    console.log("salkdfj")
-    timerEl.textContent = time;
-    var firstPage = document.getElementById("header");
-    firstPage.setAttribute("class", "start hide");
-
-    questionsEl.setAttribute("class", " ");
-    timerId = setInterval(function () {
-        time();   //initial start time
-    }, 1000);
-    timerEl.textContent = time;
-
-    getQ();
-}
-//         secondsLeft--;
-//         if (secLeft === 0) {
-//             clearInterval(timer);
-
-//         } else {
-//             time.textContent = secondsLeft   //new time is updated after each second
-//         }
-//     }, 1000);
-// }
-
-// let timerInterval = setInterval(function () {
-
-function getQ() {
-    var currentQ = questions[currentQIndex];
-    questions.index[0].textContent = currentQ.title;
-    index++;
-}
-
-const questions = [
-
+var questions = [
     {
-        title: "Which animal listed here has a pouch?",
-        options: ["a) Sugar Glider", "b) Flying squirrels"],
-        answer: "Sugar Glider"
+        question: "Which animal listed here has a pouch for their joey?",
+        options: ["a) Sugar Gliders", "b) Flying squirrels", "c) Chipmucks", "d) Raccoons"],
+        correctA: "a) Sugar Gliders"
+    },
+    {
+        question: "How many cervical vertebrae (neck bones) does a giraffe have?",
+        options: ["a) 28", "b) 21", "c) 14", "d) 7"],
+        correctA: "d) 7"
+    },
+    {
+        question: "?",
+        options: ["a) Sugar Gliders", "b) Flying squirrels", "c) Chipmucks", "d) Raccoons"],
+        correctA: ""
+    },
+    {
+        question: "W?",
+        options: ["a) Sugar Gliders", "b) Flying squirrels", "c) Chipmucks", "d) Raccoons"],
+        correctA: ""
+    },
+    {
+        question: "?",
+        options: ["a) Sugar Gliders", "b) Flying squirrels", "c) Chipmucks", "d) Raccoons"],
+        correctA: ""
+    },
+    {
+        question: "?",
+        options: ["a) Sugar Gliders", "b) Flying squirrels", "c) Chipmucks", "d) Raccoons"],
+        correctA: ""
+    },
+    {
+        question: "?",
+        options: ["a) Sugar Gliders", "b) Flying squirrels", "c) Chipmucks", "d) Raccoons"],
+        correctA: ""
     }
-
 ]
 
 
 
+function startQuiz() {
+    // timerEl.textContent = time;
 
-for (var i = 0; i < currentQ.options.length; i++) {
-    var choice = document.createElement("submit")
-
-
-   
-       
+    var firstPage = document.getElementById("header");   //displays first page
+    firstPage.setAttribute("class", "hide");        //hides loading page
 
 
-
+    function startTimer() {
+        timer = setInterval(function () {
+            secLeft--;
+            //Checking to see if quiz is over. If index > # of Q  use the var isGameOver
+            if (isQuizOver) {
+                index > questions.length
+            }
+        }, 1000)
+    }
 
 
 }
+// questionsEl.setAttribute("class", " ");
+
+
+function displayQ() { }
+console.log(index) //what is current index? Get that item from array
+//render it onto website
+//display Q
+//iterate over array of answers, and with each answer: display text of answer
+//create buttons
+//attach data to DOM element by custom attr. Create custom attr that says whether the answer is correct or not
+//doesn't need to know correct/wrong
 
 
 
@@ -78,69 +87,46 @@ for (var i = 0; i < currentQ.options.length; i++) {
 
 
 
-    function buildQuiz() {
-        const output = [];
 
-        questions.forEach(
-            (currentQ, index) => {
-                const options = [];
-                for (letter in currentQ.options) {
-                    options.push(
-                        `<label>
-                        < input type = "button" name = "questions(index.letter)" ></input >
-                        currentQ.options(letter)
-                        </label > `
-                    )
-                }
-            }
-        )
+
+
+
+
+
+function isAnswerCorrect() { }
+// get custom attr of button clicked  to see if clicked answer is correct/wrong. then if correct, go here, if not, go there
+//use event.target to access custom attr 
+//doesn't need to know Q was
+
+function answerCorrect() {
+    Qindex++;
+    displayQ()
+}
+
+function answerWrong() {
+    Qindex++;
+    displayQ()
+}
+
+
+document.addEventListener("click", "button", function (startQuiz) {
+    console.log(startQuiz.start.startBtn);
+    if (startQuiz.start.startBtn) = questions[index].correctA {
+
+
+
+
+
     }
 
+}
+}
 
 
+var options = document.createElement(“button”);
+        options.id = “options”;
+        options.textContent = index;
+        options.style.background = “blue”;
+        answersEl.appendChild(options);
 
-
-
-
-
-
-
-
-
-
-
-
-    function quizEnd() {
-        clearInterval(timerId);
-        timerEl.textContent = time;
-
-        // var lastScreenEl = 
-
-
-
-
-        function timer() {
-            time--;
-            timerEl.textContent = time;
-            if (time <= 0)
-                quizEnd();
-        }
-
-
-
-
-
-        function displayQuestions() {
-            console.log(questions[index].question)
-            quiz.textContent = questions[index].question;
-            for (var i = 0; i < questions[index].answers.length; i++) {
-                //create button for each answer
-                var choiceBtn = document.createElement("BUTTON");
-                //display each of the answers onto the button
-                choiceBtn.textContent = questions[0].answers[i]
-                choices.appendChild(choiceBtn)
-                timer();
-            }
-        }
-    }
-
+       
