@@ -61,7 +61,7 @@ function startQuiz() {
             secLeft--;
             //Checking to see if quiz is over. If index > # of Q  use the var isGameOver
             if (isQuizOver) {
-                index > questions.length
+                Qindex > questions.length
             }
         }, 1000)
     }
@@ -71,19 +71,39 @@ function startQuiz() {
 // questionsEl.setAttribute("class", " ");
 
 
-function displayQ() { }
-console.log(index) //what is current index? Get that item from array
+function displayQ() { 
+console.log(Qindex) //what is current index? Get that item from array
 //render it onto website
 //display Q
-//iterate over array of answers, and with each answer: display text of answer
+///////iterate over array of answers, and with each answer: display text of answer
 //create buttons
 //attach data to DOM element by custom attr. Create custom attr that says whether the answer is correct or not
 //doesn't need to know correct/wrong
 
 
+    var currentQ = questions[Qindex];
+    questions.Qindex[0].textContent = currentQ.title;
+    Qindex++;
+
+    for (var currentQ) {
+        console.log(currentQ);
+    }
 
 
 
+
+// var optionsBtn = document.createElement(“button”);
+// optionsBtn.id = “optionsBtn”;
+// optionsBtn.textContent = index;
+// optionsBtn.style.background = “blue”;
+// optionsEl.appendChild(optionsBtn);
+
+
+document.addEventListener("click", "button", function (startQuiz) {
+    console.log(startQuiz.start.startBtn);
+    if (startQuiz.start.startBtn) = questions[index].correctA {
+
+}
 
 
 
@@ -109,9 +129,6 @@ function answerWrong() {
 }
 
 
-document.addEventListener("click", "button", function (startQuiz) {
-    console.log(startQuiz.start.startBtn);
-    if (startQuiz.start.startBtn) = questions[index].correctA {
 
 
 
@@ -123,10 +140,5 @@ document.addEventListener("click", "button", function (startQuiz) {
 }
 
 
-var options = document.createElement(“button”);
-        options.id = “options”;
-        options.textContent = index;
-        options.style.background = “blue”;
-        answersEl.appendChild(options);
 
-       
+
